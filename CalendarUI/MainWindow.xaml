@@ -1,0 +1,120 @@
+﻿<Window x:Class="CalendarUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalendarUI"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        MinHeight="510" MinWidth="340"
+        Height="660" Width="660"
+        MaxHeight="1080" MaxWidth="720"
+        FontFamily="Consolas">
+    
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        
+        <Grid x:Name="calendarTab" Grid.Column="2" Grid.Row="1">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock x:Name="titleTextBox"
+                   Grid.Row="0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="45"
+                   Text="Month Name"
+                   TextWrapping="Wrap">
+            </TextBlock>
+            
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="previousButton" Grid.Column="0">
+                    Previous
+                </Button>
+                <Button x:Name="nextButton" Grid.Column="2">
+                    Next
+                </Button>
+            </Grid>
+            
+            <Border x:Name="calendarBox"
+                Grid.Row="2"
+                Padding="5">
+
+                <Grid x:Name="calendarGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--#region Day Labels-->
+                    <TextBlock Grid.Column="0" Grid.Row="0" 
+                           HorizontalAlignment="Center"
+                           Text="SUN" FontWeight="Bold" FontSize="20"/>
+                    <TextBlock Grid.Column="1" Grid.Row="0" 
+                           HorizontalAlignment="Center"
+                           Text="MON" FontWeight="Bold" FontSize="20"/>
+                    <TextBlock Grid.Column="2" Grid.Row="0" 
+                           HorizontalAlignment="Center"
+                           Text="TUE" FontWeight="Bold" FontSize="20"/>
+                    <TextBlock Grid.Column="3" Grid.Row="0" 
+                           HorizontalAlignment="Center"
+                           Text="WED" FontWeight="Bold" FontSize="20"/>
+                    <TextBlock Grid.Column="4" Grid.Row="0" 
+                           HorizontalAlignment="Center"
+                           Text="THU" FontWeight="Bold" FontSize="20"/>
+                    <TextBlock Grid.Column="5" Grid.Row="0" 
+                           HorizontalAlignment="Center"
+                           Text="FRI" FontWeight="Bold" FontSize="20"/>
+                    <TextBlock Grid.Column="6" Grid.Row="0" 
+                           HorizontalAlignment="Center"
+                           Text="SAT" FontWeight="Bold" FontSize="20"/>
+                    <!--#endregion-->
+
+                </Grid>
+
+            </Border>
+            
+        </Grid>
+        
+    </Grid>
+    
+</Window>
